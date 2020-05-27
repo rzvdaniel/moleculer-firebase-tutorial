@@ -1,22 +1,45 @@
 {
   "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "version": "1.0.0",
+  "description": "My Moleculer-based microservices project",
   "scripts": {
+    "dev": "moleculer-runner --repl --hot services/**/*.service.js",
+    "start": "moleculer-runner",
+    "cli": "moleculer connect ",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
-    "start": "npm run shell",
+    "start-fb": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
-  "engines": {
-    "node": "8"
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
+    "moleculer-repl": "^0.6.2",
+    "firebase-functions-test": "^0.1.6"
   },
   "dependencies": {
     "firebase-admin": "^8.6.0",
-    "firebase-functions": "^3.3.0"
+    "firebase-functions": "^3.3.0",
+    "moleculer": "^0.14.0",
+    "moleculer-web": "^0.9.0"
   },
-  "devDependencies": {
-    "firebase-functions-test": "^0.1.6"
+  "engines": {
+    "node": "10"
   },
-  "private": true
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
 }

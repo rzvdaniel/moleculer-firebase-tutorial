@@ -1,8 +1,10 @@
 const functions = require('firebase-functions');
+const { expressServer } = require('./server');
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+const moleculerApi = functions.https.onRequest(expressServer);
+
+module.exports = {
+    moleculerApi
+};
+
+

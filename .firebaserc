@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "moleculer-firebase"
+  },
+  "targets": {
+    "moleculer-firebase": {
+      "hosting": {
+        "api": [
+          "moleculer-firebase"
+        ]
+      }
+    }
   }
 }
